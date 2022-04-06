@@ -9,10 +9,14 @@
 </head>
 <body>
   <div class="container">
-    <h1>PIG DICE GAME</h1>
+    <div class="jumbotron"><h1>PIG DICE GAME</h1>
+      <img src="./img/dice-rolling-gif-2.gif" alt="">
     <h2>Where you can decide your fate ... or not!</h2>
+    <h6>“Life is fair. We all get the same nine-month shake in the box, and then the dice roll. Some people get a run of sevens. Some people, unfortunately, get snake-eyes. Its just how the world is.” ― Stephen King, Full Dark, No Stars 
+    <h6>
+    </div>
     <div class="row">
-      <div class="col-6">
+      <div class="col-6" id="card1">
         <h3>Player 1</h3>
         <button type="click" class="player1Roll">Roll</button>
         <button type="click" class="player1Hold">Hold</button>
@@ -21,7 +25,7 @@
         <p>Total Score:<span id="totalScore1"></span></p>
         <div id="winner1"></div>
       </div>
-      <div class="col-6">
+      <div class="col-6" id="card2">
         <h3>Player 2</h3>
         <button type="click" class="player2Roll">Roll</button>
         <button type="click" id="player2Hold">Hold</button>
@@ -31,6 +35,7 @@
         <div id="winner2"></div> 
       </div>
     </div>
+    <span class="dice"></span>
   </div>  
 </body>
 </html>
