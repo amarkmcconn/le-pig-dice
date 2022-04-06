@@ -1,3 +1,7 @@
-.player2Roll, .player2hold {
+.player2Roll {
+  display: none;
+}
+
+#player2Hold {
   display: none;
 }
