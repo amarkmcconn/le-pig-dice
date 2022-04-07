@@ -38,6 +38,12 @@ Player.prototype.holdScore = function() {
   return this.totalScore;
 }
 
+Player.prototype.resetGame = function() {
+  this.roundScore = 0;
+  this.totalScore = 0;
+  return [this.roundScore, this.totalScore]
+}
+
 
 // UI Logic
 
@@ -50,7 +56,7 @@ $(document).ready(function () {
     event.preventDefault();
     $(".oneDie").show();
     $(".twoDie").hide();
-  })
+  });
 
   
   $(".player1Roll").click(function (event) {
@@ -108,7 +114,7 @@ $(document).ready(function () {
   $("#twoDice").click(function(event) {
     $(".oneDie").hide();
     $(".twoDie").show();
-  })
+  });
 
   
   $(".player1DubRoll").click(function (event) {

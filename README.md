@@ -37,12 +37,17 @@ __________________________________
 __________________________________
 
 ## Contact Information
-nicholasbenzinger@gmail.com
+nicholasbenzinger@gmail.com or mark.programming1@gmail.com
 
-
-
+Copyright (c) _2022_ _Nichols Benzinger & Mark McConnell_
 
 ```javascript
+
+Description: Player(id); 
+Object to hold 
+turn score
+total score
+this. Id
 
 Description: rollDice()
 
@@ -55,22 +60,12 @@ Stop rolling dice if user rolls a 1
 Expected Output: 1  (next players turn)
 
 Test 3:
-Stop rolling dice if user rolls a 1
+stop rolliing dice if user rolls a 1 and shows round score
+Expected Output: 1 roundScore (0)
+
+Test 4:
+Stop rolling dice if user rolls a 1 and then switches player
 Expected Output: 1  (next players turn) & clears round score
-
-Description: holdScore()
-Test 1:
-holds totalScore
-Expected Output: true or show # 
-
-Test 2:
-holds totalScore
-zeroes out roundscore
-
-Player 1 & Player 2 
-Object to hold 
-turn score
-total score
 
 Description: rollDouble()
 
@@ -87,11 +82,29 @@ If a single 1 is rolled, the player scores nothing and the turn ends.
 Expected Output: (1,5) and roundscore (0)
 
 Test 4:
-If two 1s are rolled, the player’s entire score is lost, and the turn ends.
+If two 1s are rolled, the player’s totalScore is lost, the player’s roundScore is lost and the turn ends.
 Expected Output: (1,1) and roundScore (0) and totalScore (0)
 
 Test 5:
 If a double is rolled, the point total is added to the turn total as with any roll but the player is obligated to roll again (possible sub-variation of the two-dice game)
 Expected Ouput: (2,2) Hide player1 or player2 option to hold round score 
+
+
+Description: holdScore()
+Test 1:
+holds totalScore
+Expected Output: true or show # 
+
+Test 2:
+if player users hold
+Expected Output: roundScore is correct (#) and totalScore is updated with proper roundScore
+
+Test 3;
+if player users hold and switches player
+Expected Output: roundScore is correct (#) and totalScore is updated with proper roundScore, and then switches to other player
+
+
+
+
 
 ```
