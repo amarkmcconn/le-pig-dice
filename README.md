@@ -48,11 +48,15 @@ Description: rollDice()
 
 Test 1:
 Randomly return a number between 1 and 6
-Expected Output: 2
+Expected Output:  return a random # between 1 and 6
 
 Test 2:
 Stop rolling dice if user rolls a 1
-Expected Output: false  (next players turn)
+Expected Output: 1  (next players turn)
+
+Test 3:
+Stop rolling dice if user rolls a 1
+Expected Output: 1  (next players turn) & clears round score
 
 Description: holdScore()
 Test 1:
@@ -67,5 +71,27 @@ Player 1 & Player 2
 Object to hold 
 turn score
 total score
+
+Description: rollDouble()
+
+Test 1:
+Randomnly return a number between 1 and 6 for two separate dice
+Expected  Output: example (2,6) or (3,2)
+
+Test 2
+If neither dice shows a 1, their sum is added to the round total.
+Expected Output: example (2,6) or (3,2) and roundScore sums (8) and then (13)
+
+Test 3:
+If a single 1 is rolled, the player scores nothing and the turn ends.
+Expected Output: (1,5) and roundscore (0)
+
+Test 4:
+If two 1s are rolled, the player’s entire score is lost, and the turn ends.
+Expected Output: (1,1) and roundScore (0) and totalScore (0)
+
+Test 5:
+If a double is rolled, the point total is added to the turn total as with any roll but the player is obligated to roll again (possible sub-variation of the two-dice game)
+Expected Ouput: (2,2) Hide player1 or player2 option to hold round score 
 
 ```

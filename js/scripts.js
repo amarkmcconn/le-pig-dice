@@ -16,6 +16,22 @@ Player.prototype.rollDice = function() {
   return [roll, this.roundScore];
 }
 
+Player.prototype.rollDouble = function() {
+  let doubleOne = Math.floor((Math.random()*6) + 1);
+  let doubleTwo = Math.floor((Math.random()*6) + 1);
+  let rollTotal = doubleOne + doubleTwo;
+  if (rollTotal === 2) {
+    this.totalScore = 0;
+  } else if (doubleOne === 1 || doubleTwo === 1) {
+    this.roundScore =  0;
+  } else {
+    this.roundScore += rollTotal;
+  }
+  return [[doubleOne, doubleTwo], this.roundScore];
+}
+  
+
+
 Player.prototype.holdScore = function() {
   this.totalScore += this.roundScore;
   this.roundScore = 0;
