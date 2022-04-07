@@ -48,6 +48,10 @@
 .row {
   background-color: black;
   color: aliceblue;
+  /* margin: auto;
+  margin-left: 7.5%;
+  margin-top: 50px;
+  margin-bottom: 50px; */
   box-sizing: border-box;
   box-shadow:
   0 1.6px 1.2px rgba(0, 0, 0, 0.063),
