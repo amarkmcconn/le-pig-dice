@@ -6,6 +6,14 @@
   display: none;
 }
 
+.oneDie {
+  display: none;
+}
+
+.twoDie {
+  display: none;
+}
+
 .jumbotron {
   background-color: black;
   color: aliceblue;

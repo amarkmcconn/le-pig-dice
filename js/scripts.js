@@ -20,17 +20,17 @@ Player.prototype.rollDouble = function() {
   let doubleOne = Math.floor((Math.random()*6) + 1);
   let doubleTwo = Math.floor((Math.random()*6) + 1);
   let rollTotal = doubleOne + doubleTwo;
-  if (rollTotal === 2) {
+  if (doubleOne === 1 && doubleTwo === 1) {
     this.totalScore = 0;
+    this.roundScore = 0;
   } else if (doubleOne === 1 || doubleTwo === 1) {
     this.roundScore =  0;
   } else {
     this.roundScore += rollTotal;
   }
-  return [[doubleOne, doubleTwo], this.roundScore];
+  return [[doubleOne, doubleTwo], this.roundScore, this.totalScore];
 }
   
-
 
 Player.prototype.holdScore = function() {
   this.totalScore += this.roundScore;
@@ -46,8 +46,14 @@ let player2 = new Player(2);
 
 
 $(document).ready(function () {
-  $(".player1Roll").click(function (event) {
+  $("#oneDice").click(function(event) {
     event.preventDefault();
+    $(".oneDie").show();
+    $(".twoDie").hide();
+  })
+
+  
+  $(".player1Roll").click(function (event) {
     let roll1 = player1.rollDice();
     $("#roll1").text(roll1[0]);
     $("#roundScore1").text(roll1[1]);
@@ -96,6 +102,76 @@ $(document).ready(function () {
     if (player2.totalScore >= 100) {
       $("#winner2").append("WINNER, WINNER, WINNER!");
       $("#winner1").append("LOSER, LOSER, LOSER!");
+    }
+  });
+
+  $("#twoDice").click(function(event) {
+    $(".oneDie").hide();
+    $(".twoDie").show();
+  })
+
+  
+  $(".player1DubRoll").click(function (event) {
+    let roll1Dub = player1.rollDouble();
+    $("#roll1Dub").text(roll1Dub[0]);
+    $("#roundScore1Dub").text(roll1Dub[1]);
+    $("#totalScore1Dub").text(roll1Dub[2]);
+    if ((roll1Dub[0][0] === 2 && roll1Dub[0][1]=== 2) || (roll1Dub[0][0] === 3 && roll1Dub[0][1]=== 3) || (roll1Dub[0][0] === 4 && roll1Dub[0][1]=== 4) || (roll1Dub[0][0] === 5 && roll1Dub[0][1]=== 5) || (roll1Dub[0][0] === 6 && roll1Dub[0][1]=== 6)) {
+      $(".player1DubHold").hide();
+    } else {
+      $(".player1DubHold").show();
+    }
+    if (roll1Dub[0].includes(1)) {
+      $(".player1DubRoll").hide();
+      $(".player1DubHold").hide();
+      $("#player2DubHold").show();
+      $(".player2DubRoll").show();
+    }
+  });
+
+  $(".player2DubRoll").click(function (event) {
+    let roll2Dub = player2.rollDouble();
+    $("#roll2Dub").text(roll2Dub[0]);
+    $("#roundScore2Dub").text(roll2Dub[1]);
+    $("#totalScore2Dub").text(roll2Dub[2]);
+    if ((roll2Dub[0][0] === 2 && roll2Dub[0][1]=== 2) || (roll2Dub[0][0] === 3 && roll2Dub[0][1]=== 3) || (roll2Dub[0][0] === 4 && roll2Dub[0][1]=== 4) || (roll2Dub[0][0] === 5 && roll2Dub[0][1]=== 5) || (roll2Dub[0][0] === 6 && roll2Dub[0][1]=== 6)) {
+      $("#player2DubHold").hide();
+    } else {
+      $("#player2DubHold").show();
+    }
+    if (roll2Dub[0].includes(1)) {
+      $(".player2DubRoll").hide();
+      $("#player2DubHold").hide();
+      $(".player1DubHold").show();
+      $(".player1DubRoll").show();
+    }
+  });
+
+  $(".player1DubHold").click(function (event) {
+    $("#totalScore1Dub").text(player1.holdScore());
+    $("#roll1Dub").text("");
+    $("#roundScore1Dub").text("");
+    $(".player1DubRoll").hide();
+    $(".player1DubHold").hide();
+    $("#player2DubHold").show();
+    $(".player2DubRoll").show();
+    if (player1.totalScore >= 100) {
+      $("#winner1Dub").append("WINNER, WINNER, WINNER!");
+      $("#winner2Dub").append("LOSER, LOSER, LOSER!");
+    }
+  });
+
+  $("#player2DubHold").click(function (event) {
+    $("#totalScore2Dub").text(player2.holdScore());
+    $("#roll2Dub").text("");
+    $("#roundScore2Dub").text("");
+    $(".player2DubRoll").hide();
+    $("#player2DubHold").hide();
+    $(".player1DubHold").show();
+    $(".player1DubRoll").show();
+    if (player2.totalScore >= 100) {
+      $("#winner2Dub").append("WINNER, WINNER, WINNER!");
+      $("#winner1Dub").append("LOSER, LOSER, LOSER!");
     }
   });
 });
