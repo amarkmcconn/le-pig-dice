@@ -38,11 +38,11 @@ Player.prototype.holdScore = function() {
   return this.totalScore;
 }
 
-Player.prototype.resetGame = function() {
-  this.roundScore = 0;
-  this.totalScore = 0;
-  return [this.roundScore, this.totalScore]
-}
+// Player.prototype.resetGame = function() {
+//   this.roundScore = 0;
+//   this.totalScore = 0;
+//   // return [this.roundScore, this.totalScore]
+// }
 
 
 // UI Logic
@@ -180,4 +180,19 @@ $(document).ready(function () {
       $("#winner1Dub").append("LOSER, LOSER, LOSER!");
     }
   });
+
+  // $("#reset").click(function(event) {
+  //   $("#totalScore1").text(player1.resetGame());
+  //   $("#totalScore2").text(player2).resetGame();
+  //   $("#totalScore1Dub").text(player1.resetGame());
+  //   $("#totalScore2Dub").text(player2.resetGame()); 
+  //   $("#roundScore1").text(player1).resetGame();
+  //   $("#roundScore2").text(player2).resetGame();
+  //   $("#roundScore1Dub").text(player1).resetGame();
+  //   $("#roundScore2Dub").text(player2).resetGame();
+  //   $("#roll1").text(player1).resetGame();
+  //   $("#roll2").text(player2).resetGame();
+  //   $("#roll1Dub").text(player1).resetGame();
+  //   $("#roll2Dub").text(player2).resetGame();
+  // })
 });

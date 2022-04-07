@@ -1,3 +1,9 @@
+h2, h6, h3 {
+  padding: 1rem;
+}
+
+
+
 .player2Roll, .player2DubRoll {
   display: none;
 }
@@ -13,6 +19,8 @@
 .twoDie {
   display: none;
 }
+
+
 
 .jumbotron {
   background-color: black;
@@ -46,6 +54,7 @@
 }
 
 .row {
+  text-align:justify;
   background-color: rgb(0, 0, 0);
   color: aliceblue;
   margin: auto;
