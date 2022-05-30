@@ -4,9 +4,13 @@
 _____________________________
 
 ### Project Discription 📖
-  * This web application allows the users to play a game of pig dice against eachother. 
-  
-  _____________________________
+  * This a web application allows the users to play a game of pig dice against eachother. 
+
+![image](https://user-images.githubusercontent.com/101524368/170919733-555d3d22-1588-42b5-b02c-f6198e72b025.png)
+![image](https://user-images.githubusercontent.com/101524368/170919800-20e806ea-b850-4d1f-a49e-093cceef585e.png)
+
+
+__________________
 
 ### Technologies Used 🖥️
 
